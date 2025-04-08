@@ -15,6 +15,12 @@
 apply from: '../build.common.gradle'
 apply from: '../build.dependencies.gradle'
 
+repositories {
+    maven {
+        url = 'https://maven.brott.dev/'
+    }
+}
+
 android {
     namespace = 'org.firstinspires.ftc.teamcode'
 
@@ -23,9 +29,11 @@ android {
     }
 }
 
+implementation "com.acmerobotics.roadrunner:ftc:0.1.15"
+implementation "com.acmerobotics.roadrunner:core:1.0.1"
+implementation "com.acmerobotics.roadrunner:actions:1.0.1"
+implementation "com.acmerobotics.dashboard:dashboard:0.4.16"
+
 dependencies {
     implementation project(':FtcRobotController')
-    implementation 'org.apache.commons:commons-math3:3.6.1'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7'
-    implementation 'com.acmerobotics.roadrunner:core:0.5.6'
 }
